@@ -5,6 +5,7 @@ var autoprefixer = require('autoprefixer');
 var cssvars = require('postcss-simple-vars');
 var nested = require('postcss-nested');
 var cssImport = require('postcss-import');
+var browserSync = require('browser-sync').create();
 
 var onError = function (err) {
   console.log(err);
@@ -13,7 +14,7 @@ var onError = function (err) {
 var paths = {html: ['./app/index.html'], css: ['./app/assets/styles/**/*.css']};
 
 gulp.task('html', function (done) {
-  console.log('Imagine something useful being done to your HTML ...');
+  browserSync.reload();
   done();
 });
 
@@ -24,11 +25,22 @@ gulp.task('styles', function () {
 });
 
 gulp.task('default', function (done) {
-  console.log('Hooray - we created a gulp task!');
+  console.log('Default gulp task!');
   done();
 });
 
 gulp.task('watch', function () {
-  gulp.watch(paths.css, gulp.series('styles'));
+  browserSync.init({
+    notify: false,
+    server: {
+      baseDir: "app"
+    }
+  });
+  gulp.watch(paths.css, gulp.series('styles', 'cssInject'));
   gulp.watch(paths.html, gulp.series('html'));
+});
+
+gulp.task('cssInject', function() {
+  return gulp.src('./app/temp/styles/styles.css')
+    .pipe(browserSync.stream());
 });
