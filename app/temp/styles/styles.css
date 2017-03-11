@@ -471,11 +471,11 @@ img {
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 a {
-  color: #d59541;
+    color: #d59541;
 }
 
 .large-hero {
@@ -567,12 +567,12 @@ a {
 
 .wrapper {
 
-  overflow: hidden;
-  padding-left: 18px;
-  padding-right: 18px;
-  max-width: 1236px;
-  margin-left: auto;
-  margin-right: auto;
+    overflow: hidden;
+    padding-left: 18px;
+    padding-right: 18px;
+    max-width: 1236px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -597,7 +597,7 @@ a {
 }
 
 .page-section {
-  padding: 1.2rem 0;
+    padding: 1.2rem 0;
 }
 
 @media (min-width: 800px) {
@@ -613,10 +613,10 @@ a {
 }
 
 .headline {
-  font-size: 1.9rem;
-  font-weight: 300;
+    font-size: 1.9rem;
+    font-weight: 300;
 
-  color: #2f5572;
+    color: #2f5572;
 }
 
 @media (min-width: 530px) {
@@ -741,9 +741,9 @@ a {
 }
 
 .section-title {
-  font-size: 2.55rem;
-  font-weight: 300;
-  text-align: center;
+    font-size: 2.55rem;
+    font-weight: 300;
+    text-align: center;
 }
 
 @media (min-width: 530px) {
@@ -775,8 +775,8 @@ a {
 }
 
 .feature-item {
-  position: relative;
-  padding-bottom: 2.2rem;
+    position: relative;
+    padding-bottom: 2.2rem;
 }
 
 @media (min-width: 530px) {
