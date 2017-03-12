@@ -1,11 +1,12 @@
 var gulp = require('gulp');
 var  svgSprite = require('gulp-svg-sprite');
 var rename = require('gulp-rename');
+var del = require('del');
 
 var config = {
     mode: {
         css: {
-            sprite: 'svg/sprite.svg',
+            sprite: 'sprite.svg',
             render: {
                 css: {
                     template: './gulp/templates/sprite.css'
@@ -14,6 +15,10 @@ var config = {
         }
     }
 }
+
+gulp.task('beginClean', function() {
+    return del(['./app/temp/sprite', './app/assets/images/sprites']);
+});
 
 gulp.task('createSprite', function() {
     return gulp.src('./app/assets/images/icons/**/*.svg')
@@ -32,4 +37,9 @@ gulp.task('copySpriteCSS', function() {
         .pipe(gulp.dest('./app/assets/styles/modules'));
 });
 
-gulp.task('icons', gulp.series('createSprite', 'copySpriteGraphic', 'copySpriteCSS'));
+gulp.task('endClean', function () {
+    return del('./app/temp/sprite');
+});
+
+gulp.task('icons', gulp.series('beginClean', 'createSprite', 'copySpriteGraphic', 'copySpriteCSS', 'endClean'));
+
