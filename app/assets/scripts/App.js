@@ -1,10 +1,4 @@
 /*jslint node: true */
-var Person = require('./modules/Person');
+import MobileMenu from './modules/MobileMenu';
 
-var john = new Person("John Doe", "blue");
-var jane = new Person("Jane Smith", "green");
-
-alert("Testing 1234567890");
-
-john.greet();
-jane.greet();
+var mobileMenu = new MobileMenu();
