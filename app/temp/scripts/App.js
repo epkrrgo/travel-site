@@ -11669,8 +11669,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /*jslint node: true */
 var mobileMenu = new _MobileMenu2.default();
 
-var fI = new _RevealOnScroll2.default((0, _jquery2.default)(".feature-item"), "85%");
-var tM = new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "60%");
+var revealFI = new _RevealOnScroll2.default((0, _jquery2.default)(".feature-item"), "85%");
+var revealTM = new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "60%");
 
 var stickyHeader = new _StickyHeader2.default();
 
