@@ -34,7 +34,7 @@ gulp.task('watch', function (callback) {
     });
     gulp.watch(paths.css, gulp.series('styles', 'cssInject'));
     gulp.watch(paths.html, gulp.series('html'));
-    gulp.watch(jspaths.scripts, gulp.series('scripts', 'scriptsRefresh'));
+    gulp.watch(jspaths.scripts, gulp.series('modernizr', 'scripts', 'scriptsRefresh'));
     callback();
 });
 
