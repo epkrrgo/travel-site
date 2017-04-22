@@ -9880,7 +9880,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 /**
  * Load a url into a page
  */
-jQuery.fn.load = function( url, params, callback ) {
+jQuery.fn.on('load', function( url, params, callback ) {
 	var selector, type, response,
 		self = this,
 		off = url.indexOf( " " );
@@ -9938,7 +9938,7 @@ jQuery.fn.load = function( url, params, callback ) {
 	}
 
 	return this;
-};
+});
 
 
 
@@ -11307,7 +11307,7 @@ var StickyHeader = function () {
   _createClass(StickyHeader, [{
     key: 'refreshWaypoints',
     value: function refreshWaypoints() {
-      this.lazyImages.load(function () {
+      this.lazyImages.on('load', function () {
         Waypoint.refreshAll();
       });
     }
@@ -11728,6 +11728,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 "use strict";
 
 
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var _MobileMenu = __webpack_require__(2);
 
 var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
@@ -11735,10 +11739,6 @@ var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 var _RevealOnScroll = __webpack_require__(4);
 
 var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
 
 var _StickyHeader = __webpack_require__(5);
 
@@ -11753,8 +11753,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mobileMenu = new _MobileMenu2.default(); /*jslint node: true */
 
 
-var revealFI = new _RevealOnScroll2.default((0, _jquery2.default)(".feature-item"), "85%");
-var revealTM = new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "60%");
+new _RevealOnScroll2.default((0, _jquery2.default)(".feature-item"), "85%");
+new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "60%");
 
 var stickyHeader = new _StickyHeader2.default();
 var modal = new _Modal2.default();
